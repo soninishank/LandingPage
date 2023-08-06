@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Hashmatic Enquiry</title>
+  <link rel="icon" type="image/x-icon" href="Img/logo Favion.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="contact-us.css">
+
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<section id="contact">
+  
+  <h1 class="section-header">Get In Touch</h1>
+  
+  <div class="contact-wrapper">
+  
+  <!-- Left contact page --> 
+  <!-- action="https://formspree.io/f/xnqkqkky"method="POST" -->
+    <form id="contact-form" class="form-horizontal" role="form"  action="https://formspree.io/f/xnqkqkky"method="POST" onsubmit=" sendmail(); reset(); return false;">
+       
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="" required  >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="" required>
+        </div>
+      </div>
+
+      <textarea class="form-control" rows="10" placeholder="MESSAGE" id="message" name="message" required style="font-family: 'Poppins', sans-serif;"></textarea>
+      
+      <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+        <div class="alt-send-button" >
+          <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
+        </div>
+      
+      </button>
+      
+    </form>
+    
+  <!-- Left contact page --> 
+      <div class="direct-contact-container">
+        <hr>  
+
+        <ul class="contact-list">
+          <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place"><a href="#">California(CA)- 95125</a></span></i></li>
+          <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="tel:1-212-555-5555" title="Give me a call">+1 (669) 369-9752</a></span></i></li>
+          <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">contact@hashmatic.in</a></span></i></li>
+          <li class="list-item"><i class="fa fa-linkedin fa-2x"><span class="contact-text gmail"><a href="https://www.linkedin.com/company/hashmatic/" title="Send me an email" target="_blank">Hashmatic</a></span></i></li>
+        </ul>
+        <hr>
+        <div class="copyright">&copy; ALL OF THE RIGHTS RESERVED To HASHMATIC</div>
+
+      </div>
+   
+  </div>
+  
+</section>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script><script  src="./script.js"></script>
+
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+    function sendmail(){
+        Email.send({
+          SecureToken: "a4a83216-b62d-413b-bc96-c22f7a57e10f",
+        // Host : "smtp.elasticemail.com",
+        // Username : "dheerajprajapati5782@gmail.com",
+        // Password : "43FDBF01108509D8F4839BDC77C6E842D024",
+        From : 'dheerajprajapati5782@gmail.com',
+        To : 'dheerajprajapati5396@gmail.com',
+        Subject : "New Query from a User ",
+        Body : "Name: " + document.getElementById("name").value
+               + " <br> Email: " + document.getElementById("email").value
+               + " <br> Message: " + document.getElementById("message").value
+
+    }).then(
+      message => alert("Message Sent Sucessfully")
+    );
+    }
+
+    
+  </script>
+
+</body>
+</html>
